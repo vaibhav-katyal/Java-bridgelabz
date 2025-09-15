@@ -18,7 +18,6 @@ public class ArrUpdate {
         for (int i = 0; i < a; i++) {
             System.out.print(arr[i] + " ");
         }
-        System.out.println(" ");
 
         int choice = -1;
         while (choice != 0) {
