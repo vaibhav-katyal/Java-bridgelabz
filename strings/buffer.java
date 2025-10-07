@@ -14,6 +14,5 @@ public class buffer{
         System.out.println(strb1);
         System.out.println(strb3);
 
-
     }
 }
