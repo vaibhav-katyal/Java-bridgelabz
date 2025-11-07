@@ -34,6 +34,7 @@ class LinkedList1{
     }
 
     public void insertAtIndex(int ind, int val){
+
         if(ind == 0){
             insertAtstart(val);
         }else{
@@ -52,6 +53,42 @@ class LinkedList1{
             newNode.next = temp.next;
             temp.next = newNode;
         }
+    }
+
+    public void DeleteFromStart(){
+        if(head == null) return;
+        head = head.next;
+    }
+
+    public void DeleteFromEnd(){
+        Node temp = head;
+        while(temp.next.next != null){
+            temp = temp.next;
+        }
+
+        temp.next = null;
+    }
+
+    public void DeleteFromIndex(int ind){
+        Node temp = head;
+        for(int i=0; i<ind-1; i++){
+            temp = temp.next;
+        }
+
+        temp.next = temp.next.next;
+    }
+
+    public void Search(int val){
+        Node temp = head;
+        while(temp != null){
+            if(temp.data == val){
+                System.out.println("Found");
+                return;
+            }
+
+            temp = temp.next;
+        }
+        System.out.println("Not found");
     }
 
     public void display(){
@@ -81,5 +118,21 @@ public class two{
 
         ll.insertAtIndex(2, 89);
         ll.display();
+        System.out.println("");
+
+        ll.DeleteFromStart();
+        ll.display();
+        System.out.println("");
+
+        ll.DeleteFromEnd();
+        ll.display();
+        System.out.println("");
+
+        ll.DeleteFromIndex(2);
+        ll.display();
+        System.out.println("");
+
+        ll.Search(30);
+        ll.Search(302);
     }
 }
