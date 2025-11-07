@@ -24,6 +24,36 @@ class LinkedList1{
         }
     }
 
+    public void insertAtstart(int val){
+        Node newNode = new Node();
+
+        newNode.data = val;
+        newNode.next = head;
+
+        head = newNode;
+    }
+
+    public void insertAtIndex(int ind, int val){
+        if(ind == 0){
+            insertAtstart(val);
+        }else{
+            Node temp = head;
+            for(int i=0; i<ind-1; i++){
+                if(temp == null){
+                    System.err.println("Out of range");
+                    return;
+                }
+
+                temp = temp.next;
+            }
+
+            Node newNode = new Node();
+            newNode.data = val;
+            newNode.next = temp.next;
+            temp.next = newNode;
+        }
+    }
+
     public void display(){
         Node temp = head;
         while(temp != null){
@@ -31,6 +61,8 @@ class LinkedList1{
             temp = temp.next;
         }
     }
+
+    
 }
 
 public class two{
@@ -40,6 +72,14 @@ public class two{
         ll.insert(20);
         ll.insert(30);
         ll.insert(60);
+        ll.display();
+        System.out.println("");
+
+        ll.insertAtstart(200);
+        ll.display();
+        System.out.println("");
+
+        ll.insertAtIndex(2, 89);
         ll.display();
     }
 }
