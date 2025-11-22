@@ -53,7 +53,7 @@ class StackLL {
     }
 }
 
-class Stack_U_LL {
+public class Stack_U_LL {
     public static void main(String[] args) {
         StackLL sl = new StackLL();
 
