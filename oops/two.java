@@ -8,7 +8,7 @@ class Test{
 public class two{
     public static void main(String[] args){
         Test t = new Test();
-        t.size;
-        t.year;
+        // t.size;
+        // t.year;
     }
 }

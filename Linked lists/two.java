@@ -91,6 +91,36 @@ class LinkedList1{
         System.out.println("Not found");
     }
 
+    public void reverse(){
+        Node prev = new Node();
+        Node curr = new Node();
+        Node nextNode = new Node();
+
+        prev = null;
+        curr = head;
+        nextNode = curr.next;
+
+        while(curr != null){
+            nextNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextNode;
+        }
+
+        head = prev;
+    }
+
+    public int size(){
+        Node temp = head;
+        int ans = 0;
+        while(temp != null){
+            ans++;
+            temp = temp.next;
+        }
+
+        return ans;
+    }
+
     public void display(){
         Node temp = head;
         while(temp != null){
@@ -109,6 +139,7 @@ public class two{
         ll.insert(20);
         ll.insert(30);
         ll.insert(60);
+        ll.insert(550);
         ll.display();
         System.out.println("");
 
@@ -134,5 +165,13 @@ public class two{
 
         ll.Search(30);
         ll.Search(302);
+        System.out.println("");
+
+        ll.reverse();
+        ll.display();
+        System.out.println("");
+
+        System.out.println("Size of LL: " + ll.size());
+
     }
 }
